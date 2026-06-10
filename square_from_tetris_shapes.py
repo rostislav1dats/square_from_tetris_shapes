@@ -65,11 +65,11 @@ def pack_pieces(pieces: list[str], side: int) -> Optional[list[list[str]]]:
     
     def place (cells, symbol):
         for r, c in cells:
-            grid[r][c] == symbol
+            grid[r][c] = symbol
 
     def unplace(cells):
         for r, c, in cells:
-            grid[r][c] == '.'
+            grid[r][c] = '.'
 
     def solve(remaining_idx):
         pos = first_free()
