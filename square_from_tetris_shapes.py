@@ -122,10 +122,9 @@ def _render_grid(grid: list[list[str]], side: int, n: int):
     legend = ' '.join(f'{s}={name}' for name, s in SYMBOLS.items() if s in used_symbols)
     total_cells = side * side
     filled  =sum(1 for row in grid for cell in row if cell != '.')
-    empty = total_cells  - filled
+    
     print(f"Размер: {side}×{side}={total_cells} клеток | "
-          f"Заполнено: {filled} ({filled/total_cells*100:.1f}%) | "
-          f"Пустых: {empty}\n")
+          f"Заполнено: {filled} ({filled/total_cells*100:.1f}%) | ")
     
 def fast_greedy_pack(pieces: list[str], start_side: int) -> tuple[int, list[list[str]]]:
     side = start_side
